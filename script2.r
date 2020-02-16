@@ -1,6 +1,7 @@
 args <- commandArgs(TRUE)
 
 N <- args[1]
+#N <- 100
 x <- rnorm(N,0,1)
 
 # Writing mtcars data
@@ -12,6 +13,9 @@ myFun <- function(n = 5000) {
 rnd_string <- myFun(1)
 static_fname <- "_temp.png"
 
-png(filename = static_fname, width=500, height=500)
+result_filefullname <- paste(rnd_url, rnd_string, static_fname,sep="")
+
+# result_filefullname
+png(filename = result_filefullname, width=500, height=500)
 hist(x, col="lightblue")
 dev.off()
